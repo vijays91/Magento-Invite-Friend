@@ -1,0 +1,27 @@
+<div class="block block-subscribe">
+    <div class="block-title">
+        <strong><span>Invite Friend</span></strong>
+    </div>
+    <form id="invite-validate-detail" method="post" action="<?php echo Mage::getBaseUrl()."invite";?>">
+        <div class="block-content">
+            <div class="form-subscribe-header">
+                <label for="friend_name">Friend Name:</label>
+            </div>
+            <div class="input-box">
+               <input type="text" class="input-text required-entry" id="friend_name" name="friend_name" />
+            </div>
+            <div class="form-subscribe-header">
+                <label for="friend_email">Friend Email:</label>
+            </div>
+            <div class="input-box">
+               <input type="text" class="input-text required-entry validate-email" id="friend_email" name="friend_email" />
+            </div>
+            <div class="actions">
+                <button class="button" title="Invite" type="submit"><span><span>Invite</span></span></button>
+            </div>
+        </div>
+    </form>
+    <script type="text/javascript">
+        var newsletterSubscriberFormDetail = new VarienForm('invite-validate-detail');
+    </script>
+</div>

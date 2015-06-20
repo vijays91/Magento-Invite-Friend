@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Learn_Invite>
+            <version>1.0.0</version>
+        </Learn_Invite>
+    </modules>
+
+	<frontend>
+		<routers>
+			<invite>
+				<use>standard</use>
+				<args>
+					<module>Learn_Invite></module>
+					<frontName>invite</frontName>
+				</args>
+			</invite>
+		</routers>
+		<layout>
+			<updates>
+				<invite>
+					<file>learn/invite.xml</file>
+				</invite>
+			</updates>
+		</layout>
+	</frontend>
+
+    <global>
+		<models>
+            <invite>
+                <class>Learn_Invite_Model</class>
+                <resourceModel>invite_resource</resourceModel>
+            </invite>
+			
+            <invite_resource>
+                <class>Learn_Invite_Model_Resource</class>
+                <entities>
+				    <invite>
+                        <table>friend_invite</table>
+                    </invite>
+                </entities>
+            </invite_resource>
+        </models>
+		
+        <resources>
+            <invite_setup>
+                <setup>
+                    <module>Learn_Invite</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </invite_setup>
+            <invite_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </invite_write>
+            <invite_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </invite_read>
+        </resources>
+		
+		<!-- Initialize the Block class -->
+		<blocks>
+            <invite>
+                <class>Learn_Invite_Block</class>
+            </invite>
+        </blocks>
+		<!-- Initialize the Model class -->
+		<models>
+            <invite>
+                <class>Learn_Invite_Model</class>
+            </invite>
+        </models>
+		<!-- Initialize the Helper class -->
+		<helpers>
+			<invite>
+				<class>Learn_Invite_Helper</class>
+			</invite>
+		</helpers>
+		
+		<template>
+			<email>
+				<invite_tab_invite_setting_template translate="label" module="invite">
+					<label>Friend Invite Email Template</label>
+					<file>friend_invite.html</file>
+					<type>html</type>
+				</invite_tab_invite_setting_template>
+			</email>
+		</template>	
+    </global>
+	
+	<admin>
+        <routers>
+            <invite>
+                <use>admin</use>
+                <args>
+                    <module>Learn_Invite</module>
+                    <frontName>invite</frontName>
+                </args>
+            </invite>
+        </routers>
+    </admin>
+ 	
+	<adminhtml>
+		<layout>
+			<updates>
+				<invite module="invite">
+					<file>learn/invite.xml</file>
+				</invite>
+			</updates>
+		</layout>
+	</adminhtml>
+
+	<default>
+		<invite_tab>
+			<invite_setting>
+				<invite_active>1</invite_active>
+				<invite_position>2</invite_position>
+				<invite_subject>Reg: Invited for visit Our Site</invite_subject>
+				<invite_administrator>general</invite_administrator>
+			</invite_setting>
+		</invite_tab>
+	</default>	
+</config>

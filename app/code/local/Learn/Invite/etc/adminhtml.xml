@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<config>
+	<menu>
+        <invite module="invite">
+            <title>Friend Invite</title>
+            <sort_order>71</sort_order>
+            <children>
+                <dynamic_fields module="invite">
+                    <title>Friend Invite Reports</title>
+                    <sort_order>20</sort_order>
+                    <action>invite/adminhtml_invite/</action>
+                </dynamic_fields>
+				<settings translate="title" module="invite">
+                    <title>General Settings</title>
+                    <action>adminhtml/system_config/edit/section/invite_tab</action>
+                    <sort_order>40</sort_order>
+                </settings>
+            </children>
+        </invite>
+    </menu>
+	
+    <acl>
+        <resources>
+			<all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+			    <children>
+					<invite>
+						<title>Friend Invite</title>
+						<children>
+							<dynamic_fields>
+								<title>Friend Invite Reports</title>
+							</dynamic_fields>
+						</children>
+					</invite>		
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <invite_tab>
+                                        <title>Friend Invite Setting</title>
+                                    </invite_tab>				
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

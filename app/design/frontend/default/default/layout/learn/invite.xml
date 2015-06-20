@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="right">
+            <block type="invite/invite" name="invite_right" as="invite_right" after="-" >
+				<action method="setTemplate">
+					<template helper="invite/data/postion_right" />
+				</action>
+			</block>
+        </reference>
+		
+		<reference name="left">
+			<block type="invite/invite" name="invite_left" as="invite_left" after="-" >
+				<action method="setTemplate">
+					<template helper="invite/data/postion_left" />
+				</action>
+			</block>
+		</reference>
+    </default>
+</layout>

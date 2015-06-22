@@ -1,7 +1,7 @@
 <?php
 class Learn_Invite_Helper_Data extends Mage_Core_Helper_Abstract
 {
-    const XML_PATH_INVITE_ENABLE   		= 'invite_tab/invite_setting/invite_active';
+    const XML_PATH_INVITE_ENABLE   	= 'invite_tab/invite_setting/invite_active';
     const XML_PATH_INVITE_POSITION   	= 'invite_tab/invite_setting/invite_position';
     const XML_PATH_INVITE_SUBJECT   	= 'invite_tab/invite_setting/invite_subject';
 	

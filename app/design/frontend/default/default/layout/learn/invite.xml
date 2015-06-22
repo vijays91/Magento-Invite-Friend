@@ -2,16 +2,16 @@
 <layout version="0.1.0">
     <default>
         <reference name="right">
-            <block type="invite/invite" name="invite_right" as="invite_right" after="-" >
-				<action method="setTemplate">
+            <block type="invite/invite" name="invite_right" as="invite_right" after="-">
+				<action method="setTemplate" ifconfig="invite_tab/invite_setting/invite_active">
 					<template helper="invite/data/postion_right" />
 				</action>
 			</block>
         </reference>
 		
 		<reference name="left">
-			<block type="invite/invite" name="invite_left" as="invite_left" after="-" >
-				<action method="setTemplate">
+			<block type="invite/invite" name="invite_left" as="invite_left" after="-">
+				<action method="setTemplate" ifconfig="invite_tab/invite_setting/invite_active">
 					<template helper="invite/data/postion_left" />
 				</action>
 			</block>

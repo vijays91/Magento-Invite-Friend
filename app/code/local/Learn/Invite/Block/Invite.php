@@ -1,17 +1,6 @@
 <?php
 class Learn_Invite_Block_Invite extends Mage_Core_Block_Template
 { 
-	public function getprodlikes($prodid)
-	{
-		$collection = Mage::getModel("like/like")->getCollection()->addFieldToFilter('product_id',array(array('eq' => $prodid)));
-		$collection->getSelect()->columns('count(*) as like_count')->group('product_id');
-		$count = 0;
-		if ($collection) {
-			$like_count = $collection->getData();
-			$count = ($like_count[0]['like_count']) ?$like_count[0]['like_count'] : 0 ;
-		}
-		return $count;
-	}
 
 	public function getuser()
 	{
@@ -19,17 +8,7 @@ class Learn_Invite_Block_Invite extends Mage_Core_Block_Template
 		return $user;
 	}
 	
-	public function getuserlike($prodid, $user)
-	{
-		$collection = Mage::getModel("like/like")->getCollection()->addFieldToFilter('product_id',array(array('eq' => $prodid)))->addFieldToFilter('customer_id',array(array('eq' => $user)));
-		$liked = 0;
-		if ($collection) {
-			foreach ($collection as $like) {
-				$liked++;
-			}
-		}
-		return $liked;
-	}
+
    	public function getTotalOrder($prodid) 
 	{
 		/* $prodid = Mage::registry('current_product')->getId(); */

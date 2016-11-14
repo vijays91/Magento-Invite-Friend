@@ -13,6 +13,8 @@
 			<block type="invite/invite" name="invite_left" as="invite_left" after="-">
 				<action method="setTemplate" ifconfig="invite_tab/invite_setting/invite_active">
 					<template helper="invite/data/postion_left" />
+					    <!--<template>friend_invite/friend_invite.phtml</template> -->
+
 				</action>
 			</block>
 		</reference>
